@@ -1,11 +1,11 @@
 version: "3"
 services:
   vendor-portal:
-    image: chiritoiuviorel/selenium
+    image: chiritoiuviorel/cucumberbase
     environment:
     - BROWSER
     - HUB_HOST=hub
     - THREAD_COUNT=3
     - TEST_SUITE=test-suites.xml
     volumes:
-    - ./output/vendor-portal:/home/selenium-docker/test-output
+    - ./output/cucumber-base:/home/cucumber-base/test-output
