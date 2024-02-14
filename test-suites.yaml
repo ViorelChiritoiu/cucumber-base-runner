@@ -7,4 +7,4 @@ services:
     - HUB_HOST=hub
     - THREAD_COUNT=3
     volumes:
-    - C:\selenium_framework\Cucumberbase\output:/home/cucumber-base/test-output
+    - ./output:/home/cucumber-base/test-output
