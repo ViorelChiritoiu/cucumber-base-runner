@@ -6,6 +6,5 @@ services:
     - BROWSER
     - HUB_HOST=hub
     - THREAD_COUNT=3
-    - TEST_SUITE=test-suites.xml
     volumes:
     - ./output/cucumber-base:/home/cucumber-base/test-output

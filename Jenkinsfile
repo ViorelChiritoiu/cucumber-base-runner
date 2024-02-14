@@ -28,19 +28,6 @@ pipeline{
 
     post {
         always {
-            success {
-                cucumber buildStatus: 'null',
-                customCssFiles: '',
-                customJsFiles: '',
-                failedFeaturesNumber: -1,
-                failedScenariosNumber: -1,
-                failedStepsNumber: -1,
-                fileIncludePattern: '**/*.json',
-                pendingStepsNumber: -1,
-                skippedStepsNumber: -1,
-                sortingMethod: 'ALPHABETICAL',
-                undefinedStepsNumber: -1
-            }
             bat "docker-compose -f grid.yaml down"
             bat "docker-compose -f test-suites.yaml down"
             archiveArtifacts artifacts: 'output/cucumber-base/emailable-report.html', followSymlinks: false
