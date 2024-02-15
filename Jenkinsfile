@@ -30,7 +30,6 @@ pipeline{
         always {
             bat "docker-compose -f grid.yaml down"
             bat "docker-compose -f test-suites.yaml down"
-            //archiveArtifacts artifacts: 'output/test-suites/emailable-report.html', followSymlinks: false
         }
         success {
             cucumber buildStatus: 'null',
@@ -39,7 +38,8 @@ pipeline{
             failedFeaturesNumber: -1,
             failedScenariosNumber: -1,
             failedStepsNumber: -1,
-            fileIncludePattern: '**/*.json',
+            fileIncludePattern: '**/cucumber.json',
+            jsonReportDirectory: 'output',
             pendingStepsNumber: -1,
             skippedStepsNumber: -1,
             sortingMethod: 'ALPHABETICAL',
