@@ -40,6 +40,7 @@ pipeline{
             failedScenariosNumber: -1,
             failedStepsNumber: -1,
             fileIncludePattern: '**/*.json',
+            jsonReportDirectory: 'cucumber-report',
             pendingStepsNumber: -1,
             skippedStepsNumber: -1,
             sortingMethod: 'ALPHABETICAL',
