@@ -7,4 +7,4 @@ services:
     - HUB_HOST=hub
     - THREAD_COUNT=3
     volumes:
-    - ./output/cucumber-base:/home/cucumber-base/test-output
+    - ./output/test-suites:/home/cucumber-base/test-output
