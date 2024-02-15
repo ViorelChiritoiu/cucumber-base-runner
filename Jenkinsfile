@@ -18,7 +18,7 @@ pipeline{
             steps {
                 bat "docker-compose -f test-suites.yaml up --pull=always"
                 script {
-                    if (fileExists('output/flight-reservation/testng-failed.xml') || fileExists('output/vendor-portal/testng-failed.xml')) {
+                    if (fileExists('output/cucumber-base/testng-failed.xml')) {
                         error('Failed tests found')
                     }
                 }
@@ -40,7 +40,6 @@ pipeline{
             failedScenariosNumber: -1,
             failedStepsNumber: -1,
             fileIncludePattern: '**/*.json',
-            jsonReportDirectory: 'cucumber-report',
             pendingStepsNumber: -1,
             skippedStepsNumber: -1,
             sortingMethod: 'ALPHABETICAL',
