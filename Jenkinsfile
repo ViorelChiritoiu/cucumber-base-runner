@@ -28,9 +28,9 @@ pipeline{
 
     post {
         always {
+            archiveArtifacts artifacts: 'output/cucumber-base/emailable-report.html', followSymlinks: false
             bat "docker-compose -f grid.yaml down"
             bat "docker-compose -f test-suites.yaml down"
-            archiveArtifacts artifacts: 'output/cucumber-base/emailable-report.html', followSymlinks: false
         }
         success {
             cucumber buildStatus: 'null',
