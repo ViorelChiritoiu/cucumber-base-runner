@@ -18,8 +18,8 @@ pipeline{
             steps {
                 bat "docker-compose -f test-suites.yaml up --pull=always"
                 script {
-                    if (fileExists('output/cucumber-base/testng-failed.xml')) {
-                        error('Failed tests found')
+                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                        sh "exit 1"
                     }
                 }
             }
